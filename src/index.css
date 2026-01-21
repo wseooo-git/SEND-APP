@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Pretendard', system-ui, sans-serif;
+  background: #fafafa;
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Outfit', 'Pretendard', sans-serif;
+}
+
+/* 미니멀 스크롤바 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 2px;
+}
+
+/* 드래그 아이템 스타일 */
+.dragging {
+  opacity: 0.5;
+  transform: scale(1.02);
+}
+
+.drag-over {
+  background: #f0f0f0;
+}
+
+/* 입력 필드 스타일 */
+input, select {
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #111 !important;
+}
+
+/* 버튼 액티브 상태 */
+button:active {
+  transform: scale(0.98);
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 링크 연결선 */
+.link-line {
+  stroke-dasharray: 4;
+  animation: dash 0.5s linear infinite;
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -8; }
+}
